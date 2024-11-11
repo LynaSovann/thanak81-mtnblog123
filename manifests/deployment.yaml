@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: thanak81-mtnblog123-deployment
+  labels:
+    app: thanak81-mtnblog123
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: thanak81-mtnblog123
+  template:
+    metadata:
+      labels:
+        app: thanak81-mtnblog123
+    spec:
+      containers:
+        - name: thanak81-mtnblog123-container
+          image: pipejet/thanak81-mtnblog123:0
+          ports:
+            - containerPort: 5173
